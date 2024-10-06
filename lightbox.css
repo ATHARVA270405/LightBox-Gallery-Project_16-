@@ -1,0 +1,111 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+}
+
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: relative; /* Add position relative to contain the buttons */
+}
+
+.main-image {
+  width: 80%;
+  position: relative; /* Add position relative to make the buttons position absolute inside it */
+  margin-bottom: 20px;
+}
+
+.main-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styles */
+.left, .right {
+  position: absolute;
+  top: 50%; /* Place the button vertically in the middle */
+  transform: translateY(-50%); /* Center the button vertically */
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.left {
+  left: 6px; /* Place the left button on the left side of the image */
+}
+
+.right {
+  right: 6px; /* Place the right button on the right side of the image */
+}
+
+.left:hover, .right:hover {
+  background-color: #eeff00;
+}
+
+/* Thumbnails */
+.thumbnail-flex {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap; /* Wrap the thumbnails when the screen size is small */
+}
+
+.thumbnail {
+  width: 100px;  /* Fixed width for each thumbnail */
+  height: 75px;  /* Fixed height for each thumbnail */
+  object-fit: cover;  /* Ensures the image covers the thumbnail container */
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For Tablets */
+@media (max-width: 768px) {
+  .main-image {
+    width: 90%; /* Reduce main image width */
+  }
+  
+  .thumbnail {
+    width: 80px; /* Reduce thumbnail size */
+    height: 60px;
+  }
+
+  .left, .right {
+    padding: 12px; /* Adjust button size */
+    font-size: 20px;
+  }
+}
+
+/* For Phones */
+@media (max-width: 480px) {
+  .main-image {
+    width: 100%; /* Use full width for the main image */
+  }
+
+  .thumbnail {
+    width: 60px; /* Further reduce thumbnail size */
+    height: 45px;
+  }
+
+  .left, .right {
+    padding: 10px; /* Make the buttons smaller */
+    font-size: 18px;
+  }
+}

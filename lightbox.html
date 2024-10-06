@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="lightbox.css">
+</head>
+<body>
+  <div class="gallery-container">
+    <!-- Main Display Image -->
+    <div class="main-image">
+      <img id="mainImage" src="pic/i1.jpg" alt="Main Image">
+      <!-- Navigation Buttons placed inside the main-image container -->
+      <button class="left" onclick="previousImage()">&#10094;</button>
+      <button class="right" onclick="nextImage()">&#10095;</button>
+    </div>
+
+    <!-- Thumbnail Image Flexbox -->
+    <div class="thumbnail-flex">
+      <img class="thumbnail" src="pic/i1.jpg" alt="Image 1" onclick="changeImage(this)">
+      <img class="thumbnail" src="pic/i2.jpg" alt="Image 2" onclick="changeImage(this)">
+      <img class="thumbnail" src="pic/i3.jpeg" alt="Image 3" onclick="changeImage(this)">
+      <img class="thumbnail" src="pic/i4.jpg" alt="Image 4" onclick="changeImage(this)">
+      <img class="thumbnail" src="pic/i5.jpg" alt="Image 5" onclick="changeImage(this)">
+      <img class="thumbnail" src="pic/i6.jpg" alt="Image 6" onclick="changeImage(this)">
+    </div>
+  </div>
+
+  <script src="lightbox.js"></script>
+</body>
+</html>
